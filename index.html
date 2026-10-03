@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#07090d" />
+<meta name="description" content="Lost Ark KR Emergency Balance Patch — October 3, 2026. PvE class and spec damage changes, Mordum HP change, and compensation." />
+<title>KR Emergency Balance Patch — October 3, 2026 | ImDefild</title>
+<style>
+:root{
+  --bg:#07090d; --bg2:#0b0f16; --panel:#0d131c; --panel2:#111923; --line:#263043;
+  --line2:#344157; --text:#f4f7fb; --muted:#9aa9bd; --muted2:#718096;
+  --gold:#f2c86f; --gold2:#caa452; --green:#63e6a7; --green2:#2bbd78;
+  --red:#ff7a7a; --blue:#6db8ff; --radius:18px; --shadow:0 18px 55px rgba(0,0,0,.28);
+  --content:1480px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{margin:0;background:
+  radial-gradient(circle at 76% -10%,rgba(242,200,111,.08),transparent 34rem),
+  radial-gradient(circle at 10% 24%,rgba(81,133,210,.055),transparent 28rem),var(--bg);
+  color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55;
+}
+a{color:inherit;text-decoration:none} button,input{font:inherit}
+#progress{position:fixed;left:0;top:0;width:100%;height:2px;z-index:1000;background:transparent}
+#progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold2),#ffe1a0);box-shadow:0 0 14px rgba(242,200,111,.5)}
+.topbar{position:sticky;top:0;z-index:80;height:72px;background:rgba(7,9,13,.86);backdrop-filter:blur(17px);border-bottom:1px solid rgba(255,255,255,.07)}
+.topbar-inner{height:100%;max-width:var(--content);padding:0 28px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;min-width:max-content}.mark{width:35px;height:35px;border:1px solid rgba(242,200,111,.55);border-radius:9px;display:grid;place-items:center;color:var(--gold);font-weight:900;font-size:15px;box-shadow:inset 0 0 18px rgba(242,200,111,.06)}
+.brandcopy strong{display:block;letter-spacing:.18em;font-size:13px;color:#fff}.brandcopy span{display:block;color:#7e8b9c;font-size:10px;letter-spacing:.12em;text-transform:uppercase;margin-top:1px}
+.top-meta{display:flex;align-items:center;gap:10px;color:#9ba9bb;font-size:12px}.live-dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 12px rgba(99,230,167,.7)}
+.wrapper{max-width:var(--content);padding:42px 28px 80px;margin:auto}
+.hero{position:relative;overflow:hidden;min-height:370px;border:1px solid var(--line);border-radius:24px;background:#0b1017;box-shadow:var(--shadow);isolation:isolate}
+.hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(7,9,13,.98) 0%,rgba(7,9,13,.91) 43%,rgba(7,9,13,.44) 70%,rgba(7,9,13,.35) 100%)}
+.hero-art{position:absolute;inset:0 0 0 45%;z-index:-2;background-image:url('https://images.ctfassets.net/umhrp0op95v1/4uDVFm941E8oWD4ThlXM9j/bd3aee119571455aba91afed349f8ed0/LA_Wildsoul_Transform_Final_1920x1080_CT-000000000.jpg');background-size:cover;background-position:center 37%;filter:saturate(.86) contrast(1.04)}
+.hero-content{padding:54px 54px 50px;max-width:780px}.eyebrow{display:flex;align-items:center;gap:9px;color:var(--gold);font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}.eyebrow:before{content:"";width:25px;height:1px;background:var(--gold)}
+h1{font-size:clamp(38px,5vw,68px);line-height:1.01;letter-spacing:-.046em;margin:17px 0 18px;max-width:760px}.gold{color:var(--gold)}
+.hero-copy{max-width:680px;font-size:17px;color:#b7c3d3;margin:0 0 26px}.hero-copy strong{color:white}
+.hero-pills{display:flex;flex-wrap:wrap;gap:9px}.pill{display:flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid #2b3547;border-radius:999px;background:rgba(12,18,27,.8);color:#c8d2df;font-size:12px;font-weight:700}.pill b{color:var(--green)}
+.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0 38px}.quick-card{padding:20px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(145deg,#111720,#0c1119);box-shadow:0 8px 30px rgba(0,0,0,.16)}.quick-card .k{font-size:10px;text-transform:uppercase;letter-spacing:.13em;color:#75859a;font-weight:800}.quick-card .v{font-size:27px;line-height:1.1;font-weight:900;letter-spacing:-.035em;margin:6px 0 2px}.quick-card .s{font-size:12px;color:#91a0b3}
+.layout{display:grid;grid-template-columns:222px minmax(0,1fr);gap:26px;align-items:start}.guide-nav{position:sticky;top:94px;border:1px solid var(--line);border-radius:16px;background:rgba(11,16,23,.82);backdrop-filter:blur(12px);padding:16px;max-height:calc(100vh - 116px);overflow:auto}.guide-nav::-webkit-scrollbar{width:0}.guide-label{font-size:10px;color:#6f7d8f;letter-spacing:.14em;text-transform:uppercase;font-weight:900;padding:3px 9px 12px}.guide-nav nav{display:flex;flex-direction:column;gap:4px}.guide-nav a{position:relative;display:flex;gap:10px;align-items:center;color:#8f9db0;font-size:12px;font-weight:700;padding:10px 10px;border-radius:9px;border:1px solid transparent;transition:.18s ease}.guide-nav a span{font-size:10px;color:#59687b;min-width:20px}.guide-nav a:hover,.guide-nav a.active{color:#f5dcaa;background:linear-gradient(90deg,rgba(209,161,74,.15),rgba(73,90,116,.08));border-color:rgba(218,178,102,.13)}.guide-nav a.active:before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:2px;border-radius:2px;background:var(--gold);box-shadow:0 0 10px rgba(242,200,111,.34)}
+main{min-width:0}.section{scroll-margin-top:96px;margin-bottom:28px;padding:28px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,rgba(17,23,32,.96),rgba(10,15,22,.96));box-shadow:0 15px 48px rgba(0,0,0,.16)}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:22px}.chapter{font-size:10px;color:var(--gold2);letter-spacing:.14em;text-transform:uppercase;font-weight:900}.section h2{font-size:27px;letter-spacing:-.028em;margin:4px 0 0}.section-note{max-width:530px;text-align:right;color:#8392a5;font-size:12px}
+.largest{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.winner{position:relative;overflow:hidden;min-height:153px;border:1px solid #344056;border-radius:15px;background:#0b1119;padding:18px}.winner .pct{font-size:34px;font-weight:950;color:var(--green);letter-spacing:-.05em}.winner .name{font-weight:850;font-size:15px;margin-top:5px}.winner .build{color:#8f9fb2;font-size:12px}.winner:after{content:"";position:absolute;right:-22px;top:-26px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(99,230,167,.1),transparent 68%)}
+.toolbar{margin-bottom:18px}.searchbox{display:flex;align-items:center;gap:10px;padding:0 14px;border:1px solid #303b4f;background:#0a1018;border-radius:12px;max-width:620px}.searchbox svg{opacity:.45}.searchbox input{width:100%;height:44px;border:0;outline:0;background:transparent;color:#fff}
+.class-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.class-card{position:relative;overflow:hidden;isolation:isolate;border:1px solid #2d374a;border-radius:17px;background-color:#0a1017;background-image:var(--card-image);background-size:cover;background-position:center 24%;background-repeat:no-repeat;min-height:238px;transition:transform .18s,border-color .18s,box-shadow .18s}.class-card:hover{transform:translateY(-2px);border-color:#46556f;box-shadow:0 18px 45px rgba(0,0,0,.24)}.class-card.hidden{display:none}.class-bg{position:absolute;z-index:0;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 24%;opacity:.86;filter:saturate(.96) contrast(1.05);transform:scale(1.01);transition:transform .35s ease,opacity .2s ease}.class-card:hover .class-bg{transform:scale(1.035);opacity:.92}.class-card::after{content:"";position:absolute;z-index:1;inset:0;background:linear-gradient(90deg,rgba(7,11,17,.90) 0%,rgba(7,11,17,.78) 35%,rgba(7,11,17,.30) 72%,rgba(7,11,17,.43) 100%),linear-gradient(180deg,rgba(7,11,17,.04) 0%,rgba(7,11,17,.10) 42%,rgba(7,11,17,.80) 100%)}.class-monogram{position:absolute;z-index:3;right:14px;top:13px;display:grid;place-items:center;width:35px;height:35px;border:1px solid rgba(242,200,111,.48);background:rgba(8,12,18,.72);backdrop-filter:blur(5px);border-radius:9px;color:#f3d18a;font-weight:950;font-size:11px;letter-spacing:.06em}.class-body{position:relative;z-index:2;padding:18px 17px 17px;min-height:238px;display:flex;flex-direction:column;justify-content:flex-end}.class-title-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}.class-name{font-weight:900;font-size:17px;letter-spacing:-.01em;text-shadow:0 2px 12px rgba(0,0,0,.8)}.build-count{color:#9aa9bd;font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:850}.builds{display:flex;flex-direction:column;gap:7px}.build-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;padding:9px 10px;border-radius:10px;background:rgba(10,17,25,.83);backdrop-filter:blur(4px);border:1px solid rgba(45,58,78,.9)}.build-name{font-size:12px;font-weight:750;color:#d2dbe6}.change{min-width:66px;text-align:center;padding:4px 8px;border-radius:8px;border:1px solid rgba(99,230,167,.25);background:rgba(41,190,119,.1);color:var(--green);font-size:13px;font-weight:950;letter-spacing:-.01em}.build-row.max .change{box-shadow:0 0 0 1px rgba(99,230,167,.06) inset,0 0 18px rgba(99,230,167,.06)}
+.no-results{display:none;padding:28px;text-align:center;color:#8190a4;border:1px dashed #344056;border-radius:14px}.no-results.show{display:block}
+.raid-card{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(290px,.8fr);overflow:hidden;border:1px solid #3d3430;border-radius:17px;background:#0b1017}.raid-copy{padding:28px}.raid-tag{display:inline-flex;padding:6px 9px;border:1px solid rgba(255,122,122,.3);border-radius:999px;background:rgba(255,122,122,.075);color:#ff9a9a;font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}.raid-copy h3{font-size:24px;margin:14px 0 7px}.raid-copy p{color:#9eabba;margin:0;font-size:13px;max-width:680px}.raid-number{margin-top:18px;display:flex;align-items:baseline;gap:11px}.raid-number strong{font-size:36px;color:#ffad8a;letter-spacing:-.04em}.raid-number span{font-size:12px;color:#7f8d9f}.raid-visual{min-height:255px;position:relative;background:radial-gradient(circle at 50% 50%,rgba(184,65,45,.25),transparent 45%),linear-gradient(145deg,#17100f,#090c11);display:grid;place-items:center;overflow:hidden}.boss-ring{position:absolute;width:180px;height:180px;border:1px solid rgba(255,137,99,.26);border-radius:50%;box-shadow:0 0 80px rgba(235,92,55,.11),inset 0 0 55px rgba(235,92,55,.08)}.boss-ring:before,.boss-ring:after{content:"";position:absolute;inset:17px;border:1px solid rgba(255,137,99,.14);border-radius:50%}.boss-ring:after{inset:39px}.boss-text{position:relative;text-align:center}.boss-text .arrow{font-size:58px;line-height:.85;color:#ff8a69;text-shadow:0 0 26px rgba(255,110,75,.25)}.boss-text b{display:block;margin-top:13px;font-size:12px;letter-spacing:.16em}.boss-text span{display:block;color:#856d68;font-size:10px;margin-top:3px}
+.comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.comp{padding:20px;border:1px solid #2e394c;border-radius:14px;background:#0b1119}.comp .big{font-size:28px;font-weight:950;color:var(--gold);letter-spacing:-.04em}.comp h3{font-size:14px;margin:3px 0 7px}.comp p{font-size:12px;color:#8e9db0;margin:0}
+footer{max-width:var(--content);margin:0 auto;padding:0 28px 34px;display:flex;justify-content:space-between;color:#59677a;font-size:11px}.footer-brand{color:#d7b66f;font-weight:900;letter-spacing:.13em}.to-top{position:fixed;right:22px;bottom:22px;width:42px;height:42px;border-radius:12px;border:1px solid #334055;background:rgba(10,15,22,.88);color:#c5cfda;cursor:pointer;opacity:0;pointer-events:none;transition:.2s;backdrop-filter:blur(8px)}.to-top.show{opacity:1;pointer-events:auto}.to-top:hover{border-color:#6d5b3a;color:#f3d18a}
+@media (min-width:761px){body{zoom:.93}}
+@media (max-width:1050px){.layout{grid-template-columns:190px minmax(0,1fr)}.quick-grid{grid-template-columns:repeat(2,1fr)}.largest{grid-template-columns:1fr 1fr}.class-grid{grid-template-columns:1fr}.hero-content{padding:46px}.hero-art{inset:0 0 0 36%}}
+@media (max-width:760px){.topbar{height:64px}.topbar-inner{padding:0 16px}.top-meta{display:none}.wrapper{padding:24px 14px 60px}.hero{min-height:460px}.hero-content{padding:34px 24px 30px}.hero-art{inset:44% 0 0 0;opacity:.48}.hero:after{background:linear-gradient(180deg,rgba(7,9,13,.99) 0%,rgba(7,9,13,.9) 54%,rgba(7,9,13,.55) 100%)}h1{font-size:42px}.hero-copy{font-size:14px}.quick-grid{grid-template-columns:1fr 1fr}.layout{display:block}.guide-nav{position:sticky;top:64px;z-index:55;display:block;margin:0 0 16px;padding:8px;border-radius:0 0 13px 13px;overflow:auto;max-height:none}.guide-label{display:none}.guide-nav nav{display:flex;flex-direction:row;width:max-content}.guide-nav a{white-space:nowrap;padding:8px 10px}.guide-nav a span{display:none}.section{padding:20px 16px;border-radius:16px}.section-head{align-items:start;display:block}.section-note{text-align:left;margin-top:8px}.largest{grid-template-columns:1fr}.raid-card{grid-template-columns:1fr}.raid-visual{min-height:190px}.comp-grid{grid-template-columns:1fr}.quick-card{padding:15px}.quick-card .v{font-size:22px}footer{padding:0 16px 26px;display:block;line-height:1.9}.to-top{right:14px;bottom:14px}}
+@media (max-width:420px){.quick-grid{grid-template-columns:1fr}.hero-pills{gap:7px}.pill{font-size:11px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.class-card,.class-photo img,.to-top{transition:none}}
+</style>
+</head>
+<body>
+<div id="progress"><i></i></div>
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="#top"><div class="mark">ID</div><div class="brandcopy"><strong>IMDEFILD</strong><span>Lost Ark Field Guide</span></div></a>
+  <div class="top-meta"><i class="live-dot"></i><span>KR Balance Patch · October 3, 2026</span></div>
+</div></header>
+<div class="wrapper" id="top">
+  <section class="hero">
+    <div class="hero-art"></div>
+    <div class="hero-content">
+      <div class="eyebrow">KR Balance Patch · October 3, 2026</div>
+      <h1>Emergency <span class="gold">Balance Patch</span></h1>
+      <p class="hero-copy">All <strong>PvE class and spec damage changes</strong>, plus the Extreme Nightmare Mordum HP change and compensation.</p>
+      <div class="hero-pills">
+        <div class="pill"><b>14</b> classes affected</div>
+        <div class="pill"><b>21</b> specs buffed</div>
+        <div class="pill"><b>+2% → +6%</b> damage range</div>
+        <div class="pill"><b>HP −8%</b> Mordum Nightmare</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="quick-grid">
+    <div class="quick-card"><div class="k">Biggest buff</div><div class="v" style="color:var(--green)">+6.0%</div><div class="s">Deadeye · Pistoleer</div></div>
+    <div class="quick-card"><div class="k">+5% buffs</div><div class="v">5 specs</div><div class="s">Artillerist ×2, Machinist, Aeromancer, Wildsoul</div></div>
+    <div class="quick-card"><div class="k">Damage changes</div><div class="v">PvE</div><div class="s">Class and spec damage changes</div></div>
+    <div class="quick-card"><div class="k">Raid change</div><div class="v" style="color:#ffad8a">HP −8%</div><div class="s">Mordum Extreme Nightmare · ~2.10B → ~1.95B DPS requirement</div></div>
+  </div>
+
+  <div class="layout">
+    <aside class="guide-nav"><div class="guide-label">Balance Patch</div><nav>
+      <a href="#overview"><span>01</span>Biggest Buffs</a>
+      <a href="#classes"><span>02</span>Class & Spec Changes</a>
+      <a href="#mordum"><span>03</span>Mordum</a>
+      <a href="#compensation"><span>04</span>Compensation</a>
+    </nav></aside>
+
+    <main>
+      <section class="section" id="overview">
+        <div class="section-head"><div><div class="chapter">01 · Biggest Buffs</div><h2>Specs with the biggest buffs</h2></div><div class="section-note">Highest PvE damage increases in this balance patch.</div></div>
+        <div class="largest" id="largest"></div>
+      </section>
+
+      <section class="section" id="classes">
+        <div class="section-head"><div><div class="chapter">02 · Class & Spec Changes</div><h2>All class and spec buffs</h2></div><div class="section-note">Search by class or spec.</div></div>
+        <div class="toolbar">
+          <label class="searchbox" aria-label="Search class changes">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <input id="search" placeholder="Search class or spec…" autocomplete="off" />
+          </label>
+        </div>
+        <div class="class-grid" id="classGrid">
+          <article class="class-card" data-search="destroyer rage hammer gravity training" data-values="4,2" style="--card-image:url('https://images.ctfassets.net/umhrp0op95v1/7fP2fzsolkIdMusEN5Ihab/775094dd7aba60cbef0b7a09312f237f/destroyer_characterart_740x416.jpg')">
+            <img class="class-bg" src="https://images.ctfassets.net/umhrp0op95v1/7fP2fzsolkIdMusEN5Ihab/775094dd7aba60cbef0b7a09312f237f/destroyer_characterart_740x416.jpg" alt="" loading="eager" fetchpriority="high" decoding="async" referrerpolicy="no-referrer" aria-hidden="true" />
+            <div class="class-monogram">DE</div>
+            <div class="class-body">
+              <div class="class-title-row"><div class="class-name">Destroyer</div><div class="build-count">2 specs</div></div>
+              <div class="builds"><div class="build-row "><div class="build-name">Rage Hammer</div><div class="change">+4.0%</div></div><div class="build-row "><div class="build-name">Gravity Training</div><div class="change">+2.0%</div></div></div>
+            </div>
+          </article>
+          <article class="class-card" data-search="slayer punisher" data-values="2" style="--card-image:url('https://images.ctfassets.net/umhrp0op95v1/4UmZXWolO2FbAXvBF5hLu/258cf90ef4862601268a675f1eafa4a2/LA_Slayer_Web_Images__4__740.jpeg')">
+            <img class="class-bg" src="https://images.ctfassets.net/umhrp0op95v1/4UmZXWolO2FbAXvBF5hLu/258cf90ef4862601268a675f1eafa4a2/LA_Slayer_Web_Images__4__740.jpeg" alt="" loading="eager" fetchpriority="high" decoding="async" referrerpolicy="no-referrer" aria-hidden="true" />
+            <div class="class-monogram">SL</div>
+            <div class="class-body">
+              <div class="class-title-row"><div class="class-name">Slayer</div><div class="build-count">1 spec</div></div>
+              <div class="builds"><div class="build-row "><div class="build-name">Punisher</div><div class="change">+2.0%</div></div></div>
+            </div>
+          </article>
+          <article class="class-card" data-search="valkyrie shining knight" data-values="3" style="--card-image:url('https://images.ctfassets.net/umhrp0op95v1/1n9WrP6HfudrGj8cBoBoSy/a96532c6266ecb1dfaa06e3bd1505da7/LA_Valkyrie_Concept_Art_-_Valkyrie_Launch_Final_740x416_CT-000021311.jpg')">
+            <img class="class-bg" src="https://images.ctfassets.net/umhrp0op95v1/1n9WrP6HfudrGj8cBoBoSy/a96532c6266ecb1dfaa06e3bd1505da7/LA_Valkyrie_Concept_Art_-_Valkyrie_Launch_Final_740x416_CT-000021311.jpg" alt="" loading="eager" fetchpriority="high" decoding="async" referrerpolicy="no-referrer" aria-hidden="true" />
+            <div class="class-monogram">VA</div>
+            <div class="class-body">
+              <div class="class-title-row"><div class="class-name">Valkyrie</div><div class="build-count">1 spec</div></div>
+              <div class="builds"><div class="build-row "><div class="build-name">Shining Knight</div><div class="change">+3.0%</div></div></div>
+            </div>
+          </article>
+          <article class="class-card" data-search="glaivier control" data-values="4" style="--card-image:url('https://images.ctfassets.net/umhrp0op95v1/6oso4CBw9PvLIjWkEpiWB/43920df0f55ee143ab8370cc5753f11c/LA_ADVANCED_CLASS_DETAILS_GLAIVIER.jpg')">
+            <img class="class-bg" src="https://images.ctfassets.net/umhrp0op95v1/6oso4CBw9PvLIjWkEpiWB/43920df0f55ee143ab8370cc5753f11c/LA_ADVANCED_CLASS_DETAILS_GLAIVIER.jpg" alt="" loading="eager" fetchpriority="high" decoding="async" referrerpolicy="no-referrer" aria-hidden="true" />
+            <div class="class-monogram">GL</div>
+            <div class="class-body">
+              <div class="class-title-row"><div class="class-name">Glaivier</div><div class="build-count">1 spec</div></div>
+              <div class="builds"><div class="build-row "><div class="build-name">Control</div><div class="change">+4.0%</div></div></div>
+            </div>
+          </article>
+          <article class="class-card" data-search="deadeye pistoleer" data-values="6" style="--card-image:url('https://images.ctfassets.net/umhrp0op95v1/2oHpLTSbP3j9RHnjcGRfB3/82f700acac3015d7269501a0723cae82/LA_GUNNER_DEADEYE_740z420.jpg')">
+            <img class="class-bg" src="https://images.ctfassets.net/umhrp0op95v1/2oHpLTSbP3j9RHnjcGRfB3/82f700acac3015d7269501a0723cae82/LA_GUNNER_DEADEYE_740z420.jpg" alt="" loading="eager" fetchpriority="high" decoding="async" referrerpolicy="no-referrer" aria-hidden="true" />
+            <div class="class-monogram">DE</div>
+            <div class="class-body">
+              <div class="class-title-row"><div class="class-name">Deadeye</div><div class="build-count">1 spec</div></div>
+              <div class="builds"><div class="build-row max"><div class="build-name">Pistoleer</div><div class="change">+6.0%</div></div></div>
+            </div>
+          </article>
+          <article class="class-card" data-search="artillerist barrage enhancement firepower enhancement" data-values="5,5" style="--card-image:url('https://images.ctfassets.net/umhrp0op95v1/1oDvwRlGZWeZZSkKfOOjne/c87e363fcde492a32f7008e7e2d97bb0/LA_GUNNER_ARTILLERIST_740x420.jpg')">
+            <img class="class-bg" src="https://images.ctfassets.net/umhrp0op95v1/1oDvwRlGZWeZZSkKfOOjne/c87e363fcde492a32f7008e7e2d97bb0/LA_GUNNER_ARTILLERIST_740x420.jpg" alt="" loading="eager" fetchpriority="high" decoding="async" referrerpolicy="no-referrer" aria-hidden="true" />
+            <div class="class-monogram">AR</div>
+            <div class="class-body">
+              <div class="class-title-row"><div class="class-name">Artillerist</div><div class="build-count">2 specs</div></div>
+              <div class="builds"><div class="build-row max"><div class="build-name">Barrage Enhancement</div><div class="change">+5.0%</div></div><div class="build-row max"><div class="build-name">Firepower Enhancement</div><div class="change">+5.0%</div></div></div>
+            </div>
+          </article>
+          <article class="class-card" data-search="sharpshooter death strike" data-values="2" style="--card-image:url('https://images.ctfassets.net/umhrp0op95v1/7LBXc7jypPtPYQciUDdg6E/64519e4e8b877e9e35af6ff7072a1000/LA_GUNNER_SHARPSHOOTER_740x420.jpg')">
+            <img class="class-bg" src="https://images.ctfassets.net/umhrp0op95v1/7LBXc7jypPtPYQciUDdg6E/64519e4e8b877e9e35af6ff7072a1000/LA_GUNNER_SHARPSHOOTER_740x420.jpg" alt="" loading="eager" fetchpriority="high" decoding="async" referrerpolicy="no-referrer" aria-hidden="true" />
+            <div class="class-monogram">SS</div>
+            <div class="class-body">
+              <div class="class-title-row"><div class="class-name">Sharpshooter</div><div class="build-count">1 spec</div></div>
+              <div class="builds"><div class="build-row "><div class="build-name">Death Strike</div><div class="change">+2.0%</div></div></div>
+            </div>
+          </article>
+          <article class="class-card" data-search="machinist evolutionary legacy arthetinean skill" data-values="2,5" style="--card-image:url('https://images.ctfassets.net/umhrp0op95v1/2uQRc3IK7RDP0zA6cfMYvN/5f9bfe3f6f29652e796dae508b9178e3/LA_Machinist_Screens__1__740.jpeg')">
+            <img class="class-bg" src="https://images.ctfassets.net/umhrp0op95v1/2uQRc3IK7RDP0zA6cfMYvN/5f9bfe3f6f29652e796dae508b9178e3/LA_Machinist_Screens__1__740.jpeg" alt="" loading="eager" fetchpriority="high" decoding="async" referrerpolicy="no-referrer" aria-hidden="true" />
+            <div class="class-monogram">MA</div>
+            <div class="class-body">
+              <div class="class-title-row"><div class="class-name">Machinist</div><div class="build-count">2 specs</div></div>
+              <div class="builds"><div class="build-row "><div class="build-name">Evolutionary Legacy</div><div class="change">+2.0%</div></div><div class="build-row max"><div class="build-name">Arthetinean Skill</div><div class="change">+5.0%</div></div></div>
+            </div>
+          </article>
+          <article class="class-card" data-search="gunslinger peacemaker" data-values="4" style="--card-image:url('https://images.ctfassets.net/umhrp0op95v1/28UKJaKVEQTc521p4kQktx/acdcfcf296d5b9109841b759db9b8dc7/LA_GUNNER_GUNSLINGER_1920x1080.jpg')">
+            <img class="class-bg" src="https://images.ctfassets.net/umhrp0op95v1/28UKJaKVEQTc521p4kQktx/acdcfcf296d5b9109841b759db9b8dc7/LA_GUNNER_GUNSLINGER_1920x1080.jpg" alt="" loading="eager" fetchpriority="high" decoding="async" referrerpolicy="no-referrer" aria-hidden="true" />
+            <div class="class-monogram">GS</div>
+            <div class="class-body">
+              <div class="class-title-row"><div class="class-name">Gunslinger</div><div class="build-count">1 spec</div></div>
+              <div class="builds"><div class="build-row "><div class="build-name">Peacemaker</div><div class="change">+4.0%</div></div></div>
+            </div>
+          </article>
+          <article class="class-card" data-search="sorceress igniter reflux" data-values="3,2" style="--card-image:url('https://images.ctfassets.net/umhrp0op95v1/6uXwCSE4cA0HeRgtK8XCgt/bf11d09f1546a9675bc690933fbe354a/LA_MAGE_SORCERESS_1920x1080.jpg')">
+            <img class="class-bg" src="https://images.ctfassets.net/umhrp0op95v1/6uXwCSE4cA0HeRgtK8XCgt/bf11d09f1546a9675bc690933fbe354a/LA_MAGE_SORCERESS_1920x1080.jpg" alt="" loading="eager" fetchpriority="high" decoding="async" referrerpolicy="no-referrer" aria-hidden="true" />
+            <div class="class-monogram">SO</div>
+            <div class="class-body">
+              <div class="class-title-row"><div class="class-name">Sorceress</div><div class="build-count">2 specs</div></div>
+              <div class="builds"><div class="build-row "><div class="build-name">Igniter</div><div class="change">+3.0%</div></div><div class="build-row "><div class="build-name">Reflux</div><div class="change">+2.0%</div></div></div>
+            </div>
+          </article>
+          <article class="class-card" data-search="shadowhunter demonic impulse perfect suppression" data-values="4,4" style="--card-image:url('https://images.ctfassets.net/umhrp0op95v1/1GskICYQPgdCqi5orsNgZm/596271a4c0f4abff7a92b1d31f555232/LA_ASSASSIN_SHADOWHUNTER_740x420.jpg')">
+            <img class="class-bg" src="https://images.ctfassets.net/umhrp0op95v1/1GskICYQPgdCqi5orsNgZm/596271a4c0f4abff7a92b1d31f555232/LA_ASSASSIN_SHADOWHUNTER_740x420.jpg" alt="" loading="eager" fetchpriority="high" decoding="async" referrerpolicy="no-referrer" aria-hidden="true" />
+            <div class="class-monogram">SH</div>
+            <div class="class-body">
+              <div class="class-title-row"><div class="class-name">Shadowhunter</div><div class="build-count">2 specs</div></div>
+              <div class="builds"><div class="build-row "><div class="build-name">Demonic Impulse</div><div class="change">+4.0%</div></div><div class="build-row "><div class="build-name">Perfect Suppression</div><div class="change">+4.0%</div></div></div>
+            </div>
+          </article>
+          <article class="class-card" data-search="souleater night's edge" data-values="3" style="--card-image:url('https://images.ctfassets.net/umhrp0op95v1/7Dy3GdpPY6RfnMMrjoT1yF/5e0c2deec58a45e091f57f2afe937ae3/November-souleater-pathof.jpg')">
+            <img class="class-bg" src="https://images.ctfassets.net/umhrp0op95v1/7Dy3GdpPY6RfnMMrjoT1yF/5e0c2deec58a45e091f57f2afe937ae3/November-souleater-pathof.jpg" alt="" loading="eager" fetchpriority="high" decoding="async" referrerpolicy="no-referrer" aria-hidden="true" />
+            <div class="class-monogram">SE</div>
+            <div class="class-body">
+              <div class="class-title-row"><div class="class-name">Souleater</div><div class="build-count">1 spec</div></div>
+              <div class="builds"><div class="build-row "><div class="build-name">Night's Edge</div><div class="change">+3.0%</div></div></div>
+            </div>
+          </article>
+          <article class="class-card" data-search="aeromancer wind fury drizzle" data-values="3,5" style="--card-image:url('https://images.ctfassets.net/umhrp0op95v1/6skMRRxUl20cwiH0CWfp18/ad5c0b84e04ba7e1942d8636c5d682d5/aero-mob.jpg')">
+            <img class="class-bg" src="https://images.ctfassets.net/umhrp0op95v1/6skMRRxUl20cwiH0CWfp18/ad5c0b84e04ba7e1942d8636c5d682d5/aero-mob.jpg" alt="" loading="eager" fetchpriority="high" decoding="async" referrerpolicy="no-referrer" aria-hidden="true" />
+            <div class="class-monogram">AE</div>
+            <div class="class-body">
+              <div class="class-title-row"><div class="class-name">Aeromancer</div><div class="build-count">2 specs</div></div>
+              <div class="builds"><div class="build-row "><div class="build-name">Wind Fury</div><div class="change">+3.0%</div></div><div class="build-row max"><div class="build-name">Drizzle</div><div class="change">+5.0%</div></div></div>
+            </div>
+          </article>
+          <article class="class-card" data-search="wildsoul ferality / wild instincts phantom beast awakening" data-values="4,5" style="--card-image:url('https://images.ctfassets.net/umhrp0op95v1/JnCHNLKktTw2W0IcZANP6/77ad60442541e5585f4b5d054f155395/LA_Wildsoul_Transform_Final_740x416_CT-000000000.jpg')">
+            <img class="class-bg" src="https://images.ctfassets.net/umhrp0op95v1/JnCHNLKktTw2W0IcZANP6/77ad60442541e5585f4b5d054f155395/LA_Wildsoul_Transform_Final_740x416_CT-000000000.jpg" alt="" loading="eager" fetchpriority="high" decoding="async" referrerpolicy="no-referrer" aria-hidden="true" />
+            <div class="class-monogram">WI</div>
+            <div class="class-body">
+              <div class="class-title-row"><div class="class-name">Wildsoul</div><div class="build-count">2 specs</div></div>
+              <div class="builds"><div class="build-row "><div class="build-name">Ferality / Wild Instincts</div><div class="change">+4.0%</div></div><div class="build-row max"><div class="build-name">Phantom Beast Awakening</div><div class="change">+5.0%</div></div></div>
+            </div>
+          </article>
+        </div>
+        <div class="no-results" id="noResults">No matching class or spec.</div>
+      </section>
+
+      <section class="section" id="mordum">
+        <div class="section-head"><div><div class="chapter">03 · Mordum HP Change</div><h2>Extreme Nightmare Mordum</h2></div><div class="section-note">HP −8% · DPS requirement ~2.10B → ~1.95B.</div></div>
+        <div class="raid-card">
+          <div class="raid-copy">
+            <span class="raid-tag">Boss HP Nerf</span>
+            <h3>Abyssal Punisher, Mordum</h3>
+            <p>Kazeros Raid Act 3: Night of Storms and Darkness — <strong style="color:#d9e0e9">Extreme Nightmare</strong>. Mordum received an <strong style="color:#ffad8a">8% HP nerf</strong>, reducing the practical damage requirement from about <strong style="color:#d9e0e9">2.10B DPS</strong> to <strong style="color:#d9e0e9">1.95B DPS</strong>.</p>
+            <div class="raid-number"><strong>−8% HP</strong><span>~2.10B → ~1.95B DPS requirement</span></div>
+          </div>
+          <div class="raid-visual"><div class="boss-ring"></div><div class="boss-text"><div class="arrow">↓</div><b>MORDUM</b><span>EXTREME NIGHTMARE</span></div></div>
+        </div>
+      </section>
+
+      <section class="section" id="compensation">
+        <div class="section-head"><div><div class="chapter">04 · Compensation</div><h2>KR compensation</h2></div><div class="section-note">October 3 KR emergency-maintenance compensation.</div></div>
+        <div class="comp-grid">
+          <div class="comp"><div class="big">500,000</div><h3>Bound Gold</h3><p>For rosters with an Extreme Nightmare Act 3 clear before the emergency maintenance, delivered through the “Thunder Lord Gold Bar” item to the character’s Universal Storage.</p></div>
+          <div class="comp"><div class="big">×30</div><h3>Shining Battle Item Selection Chest</h3><p>For rosters that entered Act 3 Extreme Nightmare at least once from September 23 through October 2 at 19:05 KR time.</p></div>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+<footer><span class="footer-brand">IMDEFILD</span><span>Lost Ark · KR Emergency Balance Patch · October 3, 2026</span></footer>
+<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+<script>
+const classData = [
+  {name:'Destroyer', mon:'DE', image:'https://images.ctfassets.net/umhrp0op95v1/7fP2fzsolkIdMusEN5Ihab/775094dd7aba60cbef0b7a09312f237f/destroyer_characterart_740x416.jpg', builds:[['Rage Hammer',4],['Gravity Training',2]]},
+  {name:'Slayer', mon:'SL', image:'https://images.ctfassets.net/umhrp0op95v1/4UmZXWolO2FbAXvBF5hLu/258cf90ef4862601268a675f1eafa4a2/LA_Slayer_Web_Images__4__740.jpeg', builds:[['Punisher',2]]},
+  {name:'Valkyrie', mon:'VA', image:'https://images.ctfassets.net/umhrp0op95v1/1n9WrP6HfudrGj8cBoBoSy/a96532c6266ecb1dfaa06e3bd1505da7/LA_Valkyrie_Concept_Art_-_Valkyrie_Launch_Final_740x416_CT-000021311.jpg', builds:[['Shining Knight',3]]},
+  {name:'Glaivier', mon:'GL', image:'https://images.ctfassets.net/umhrp0op95v1/6oso4CBw9PvLIjWkEpiWB/43920df0f55ee143ab8370cc5753f11c/LA_ADVANCED_CLASS_DETAILS_GLAIVIER.jpg', builds:[['Control',4]]},
+  {name:'Deadeye', mon:'DE', image:'https://images.ctfassets.net/umhrp0op95v1/2oHpLTSbP3j9RHnjcGRfB3/82f700acac3015d7269501a0723cae82/LA_GUNNER_DEADEYE_740z420.jpg', builds:[['Pistoleer',6]]},
+  {name:'Artillerist', mon:'AR', image:'https://images.ctfassets.net/umhrp0op95v1/1oDvwRlGZWeZZSkKfOOjne/c87e363fcde492a32f7008e7e2d97bb0/LA_GUNNER_ARTILLERIST_740x420.jpg', builds:[['Barrage Enhancement',5],['Firepower Enhancement',5]]},
+  {name:'Sharpshooter', mon:'SS', image:'https://images.ctfassets.net/umhrp0op95v1/7LBXc7jypPtPYQciUDdg6E/64519e4e8b877e9e35af6ff7072a1000/LA_GUNNER_SHARPSHOOTER_740x420.jpg', builds:[['Death Strike',2]]},
+  {name:'Machinist', mon:'MA', image:'https://images.ctfassets.net/umhrp0op95v1/2uQRc3IK7RDP0zA6cfMYvN/5f9bfe3f6f29652e796dae508b9178e3/LA_Machinist_Screens__1__740.jpeg', builds:[['Evolutionary Legacy',2],['Arthetinean Skill',5]]},
+  {name:'Gunslinger', mon:'GS', image:'https://images.ctfassets.net/umhrp0op95v1/28UKJaKVEQTc521p4kQktx/acdcfcf296d5b9109841b759db9b8dc7/LA_GUNNER_GUNSLINGER_1920x1080.jpg', builds:[['Peacemaker',4]]},
+  {name:'Sorceress', mon:'SO', image:'https://images.ctfassets.net/umhrp0op95v1/6uXwCSE4cA0HeRgtK8XCgt/bf11d09f1546a9675bc690933fbe354a/LA_MAGE_SORCERESS_1920x1080.jpg', builds:[['Igniter',3],['Reflux',2]]},
+  {name:'Shadowhunter', mon:'SH', image:'https://images.ctfassets.net/umhrp0op95v1/1GskICYQPgdCqi5orsNgZm/596271a4c0f4abff7a92b1d31f555232/LA_ASSASSIN_SHADOWHUNTER_740x420.jpg', builds:[['Demonic Impulse',4],['Perfect Suppression',4]]},
+  {name:'Souleater', mon:'SE', image:'https://images.ctfassets.net/umhrp0op95v1/7Dy3GdpPY6RfnMMrjoT1yF/5e0c2deec58a45e091f57f2afe937ae3/November-souleater-pathof.jpg', builds:[["Night's Edge",3]]},
+  {name:'Aeromancer', mon:'AE', image:'https://images.ctfassets.net/umhrp0op95v1/6skMRRxUl20cwiH0CWfp18/ad5c0b84e04ba7e1942d8636c5d682d5/aero-mob.jpg', builds:[['Wind Fury',3],['Drizzle',5]]},
+  {name:'Wildsoul', mon:'WI', image:'https://images.ctfassets.net/umhrp0op95v1/JnCHNLKktTw2W0IcZANP6/77ad60442541e5585f4b5d054f155395/LA_Wildsoul_Transform_Final_740x416_CT-000000000.jpg', builds:[['Ferality / Wild Instincts',4],['Phantom Beast Awakening',5]]}
+];
+const largest = classData.flatMap(c=>c.builds.map(b=>({class:c.name,build:b[0],pct:b[1]}))).sort((a,b)=>b.pct-a.pct).slice(0,6);
+document.getElementById('largest').innerHTML = largest.map(x=>`<div class="winner"><div class="pct">+${x.pct.toFixed(1)}%</div><div class="name">${x.class}</div><div class="build">${x.build}</div></div>`).join('');
+
+function applySearch(){
+  const q=document.getElementById('search').value.trim().toLowerCase(); let shown=0;
+  document.querySelectorAll('.class-card').forEach(card=>{
+    const show=!q||card.dataset.search.includes(q);
+    card.classList.toggle('hidden',!show); if(show) shown++;
+  });
+  document.getElementById('noResults').classList.toggle('show',shown===0);
+}
+document.getElementById('search').addEventListener('input',applySearch);
+
+const links=[...document.querySelectorAll('.guide-nav a')], sections=links.map(a=>document.querySelector(a.getAttribute('href')));
+function onScroll(){
+  const doc=document.documentElement, max=doc.scrollHeight-doc.clientHeight; document.querySelector('#progress i').style.width=(max?window.scrollY/max*100:0)+'%';
+  let current=sections[0]; for(const s of sections){if(s.getBoundingClientRect().top<=150) current=s;}
+  links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+current.id));
+  document.getElementById('toTop').classList.toggle('show',window.scrollY>700);
+}
+window.addEventListener('scroll',onScroll,{passive:true}); window.addEventListener('resize',onScroll); onScroll();
+document.getElementById('toTop').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+</script>
+</body>
+</html>
